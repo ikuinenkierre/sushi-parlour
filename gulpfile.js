@@ -22,7 +22,7 @@
 
 	function browsersync() {
 		browserSync.init({
-			server: {baseDir: 'dist/'},
+			server: {baseDir: 'docs/'},
 			notify: false,
 			online: true
 		});
@@ -36,12 +36,12 @@
 
 	function scripts() {
 		return src([
-			'node_modules/jquery/dist/jquery.min.js',
+			'node_modules/jquery/docs/jquery.min.js',
 			'src/js/scripts.js'
 		])
 		.pipe(plumber())
 		.pipe(uglify())
-		.pipe(dest('dist/js/'))
+		.pipe(dest('docs/js/'))
 		.pipe(browserSync.stream())
 	}
 
@@ -50,22 +50,22 @@
 		.pipe(plumber())
 		.pipe(sass())
 		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
-		.pipe(dest('dist/css/'))
+		.pipe(dest('docs/css/'))
 		.pipe(cleancss({ level: { 1: { specialComments: 0 }}, /*format: 'beautify'*/}))
 		.pipe(rename('main.min.css'))
-		.pipe(dest('dist/css/'))
+		.pipe(dest('docs/css/'))
 		.pipe(browserSync.stream())
 	}
 
 	function images() {
 		return src('src/images/src/**/*')
-		.pipe(newer('dist/images/'))
+		.pipe(newer('docs/images/'))
 		.pipe(imagemin([
 			imagemin.optipng({ optimizationLevel: 3 }),
             imagemin.mozjpeg({ progressive: true }),
             imagemin.svgo()
 		]))
-		.pipe(dest('dist/images/'))
+		.pipe(dest('docs/images/'))
 	}
 
 	function imgwebp() {
@@ -74,14 +74,14 @@
 			webp({ quality: 90 })
 		]))
 		.pipe(extReplace('.webp'))
-		.pipe(dest('dist/images/'))
+		.pipe(dest('docs/images/'))
 	}
 
 	function sprite() {
 		return src('src/images/icon-*.svg')
 		.pipe(svgstore({ inlineSvg: true }))
 		.pipe(rename('sprite.svg'))
-		.pipe(dest('dist/images/'))
+		.pipe(dest('docs/images/'))
 	}
 
 	function html() {
@@ -89,7 +89,7 @@
 		.pipe(posthtml([
 			include()
 		]))
-		.pipe(dest('dist/'))
+		.pipe(dest('docs/'))
 		.pipe(browserSync.stream())
 	}
 
@@ -99,7 +99,7 @@
 	// }
 
 	function cleandist() {
-		return del('dist/**/*', { force: true })
+		return del('docs/**/*', { force: true })
 	}
 
 	function buildcopy() {
@@ -110,7 +110,7 @@
 			'src/images/**/*',
 			'src/**/*.html'
 			], { base: 'src'})
-		.pipe(dest('dist'))
+		.pipe(dest('docs'))
 	}
 
 	function startWatch() {
