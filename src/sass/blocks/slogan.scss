@@ -1,0 +1,26 @@
+.slogan {
+	background-color: $background-secondary-color;
+}
+.slogan__title {
+	margin-top: 103px;
+	font-family: $secondary-font-family;
+	font-size: 41px;
+	color: $primary-color;
+}
+.slogan__text {
+	margin-top: 26px;
+	margin-left: 20px;
+	margin-right: 20px;
+	font-size: 19px;
+	line-height: 1.4;
+}
+@media (min-width: 960px) {
+	.slogan__text {
+		margin-left: 170px;
+		margin-right: 170px;	
+	}
+}
+.slogan__ellipsis {
+	margin-top: 45px;
+	margin-bottom: 95px;
+}

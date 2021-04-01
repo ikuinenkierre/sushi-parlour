@@ -1,0 +1,19 @@
+.features {
+	padding-top: 95px;
+	padding-bottom: 76px;
+	background-color: $background-secondary-color;
+}
+.features__feature {
+	margin-left: 15px;
+	margin-right: 15px;
+}
+.features__title {
+	margin-top: 20px;
+	font-family: $secondary-font-family;
+	font-size: 25px;
+}
+.features__text {
+	margin-top: 26px;
+	font-size: 17px;
+	font-weight: 100;
+}

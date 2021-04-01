@@ -1,0 +1,26 @@
+@media (min-width: 720px) {
+	.about {
+		background-image: url(../images/about.png);
+		background-position: right;
+		background-repeat: no-repeat;
+		background-size: auto 100%;
+	}
+}
+.about .container {
+	max-width: 1315px;
+}
+.about__title {
+	margin-top: 158px;
+	font-family: $secondary-font-family;
+	font-size: 28px;
+	color: $primary-color;
+}
+.about__text {
+	margin-top: 33px;
+	margin-right: 50px;
+	margin-bottom: 175px;
+	font-size: 20px;
+	font-weight: 100;
+	letter-spacing: .4px;
+	background-color: $background-primary-color;
+}
