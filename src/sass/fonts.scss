@@ -18,7 +18,8 @@
 
 @font-face {
   font-family: "GoodDog-Cool";
-  src: url("../fonts/GoodDog-Cool.otf") format("otf");
+  src: url("../fonts/GoodDog-webfont.woff") format("woff"),
+       url("../fonts/GoodDog-Cool.otf") format("otf");
   font-weight: normal;
 }
 

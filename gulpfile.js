@@ -36,7 +36,7 @@
 
 	function scripts() {
 		return src([
-			'node_modules/jquery/docs/jquery.min.js',
+			'node_modules/jquery/dist/jquery.min.js',
 			'src/js/scripts.js'
 		])
 		.pipe(plumber())
@@ -86,9 +86,9 @@
 
 	function html() {
 		return src('src/*.html')
-		.pipe(posthtml([
-			include()
-		]))
+		// .pipe(posthtml([
+		// 	include()
+		// ]))
 		.pipe(dest('docs/'))
 		.pipe(browserSync.stream())
 	}
