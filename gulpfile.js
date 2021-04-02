@@ -86,9 +86,9 @@
 
 	function html() {
 		return src('src/*.html')
-		// .pipe(posthtml([
-		// 	include()
-		// ]))
+		.pipe(posthtml([
+			include()
+		]))
 		.pipe(dest('docs/'))
 		.pipe(browserSync.stream())
 	}
